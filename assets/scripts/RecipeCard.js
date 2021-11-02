@@ -132,12 +132,12 @@ class RecipeCard extends HTMLElement {
     if (check_rating != null) {
       avg_rating.textContent = searchForKey(data, "ratingValue");
       let rating_img = document.createElement('img');
+      rating.appendChild(avg_rating);
       //rating_img.src = '/assets/images/icons/' + Math.round(searchForKey(data, "ratingValue")) + '-star.svg';
       rating_img.setAttribute('src', '/assets/images/icons/' + Math.round(searchForKey(data, "ratingValue")) + '-star.svg');
       //rating_img.alt = Math.round(searchForKey(data, "ratingValue")) + 'stars';
       rating_img.setAttribute('alt', Math.round(searchForKey(data, "ratingValue")) + ' stars');
       rating.appendChild(rating_img);
-      rating.appendChild(avg_rating);
       let num_rating = document.createElement('span');
       num_rating.textContent = '(' + searchForKey(data, "ratingCount") + ')';
       rating.appendChild(num_rating);
