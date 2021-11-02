@@ -137,12 +137,15 @@ class RecipeCard extends HTMLElement {
       //rating_img.alt = Math.round(searchForKey(data, "ratingValue")) + 'stars';
       rating_img.setAttribute('alt', Math.round(searchForKey(data, "ratingValue")) + ' stars');
       rating.appendChild(rating_img);
+      rating.appendChild(avg_rating);
       let num_rating = document.createElement('span');
       num_rating.textContent = '(' + searchForKey(data, "ratingCount") + ')';
       rating.appendChild(num_rating);
     }
-    else avg_rating.textContent = "No Reviews";
-    rating.appendChild(avg_rating);
+    else {
+      avg_rating.textContent = "No Reviews";
+      rating.appendChild(avg_rating);
+    }
 
     let time = document.createElement('time');
     time.textContent = convertTime((searchForKey(data, 'totalTime')));
